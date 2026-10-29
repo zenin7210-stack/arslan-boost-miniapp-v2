@@ -196,5 +196,5 @@
   (async()=>{try{const response=await fetch(apiUrl('config'),{signal:AbortSignal.timeout(5000)});if(!response.ok)return;const server=await response.json();if(!server.arslanBoostApi)return;for(const key of ['supportUrl','botUrl','starsRate','cards','cardHolder','banners'])if(server[key])config[key]=server[key];if(Array.isArray(server.prices)&&server.prices.length===prices.length)prices=server.prices;state.service=true;updatePrice();await syncState();}catch{}})();
   const intro=$('#intro'),video=$('#intro-video');let introTimeout;function finishIntro(){clearTimeout(introTimeout);intro.classList.remove('show');try{video.pause();video.currentTime=0;}catch{}}
   $('#skip').onclick=finishIntro;video.addEventListener('ended',finishIntro);video.addEventListener('error',finishIntro);
-  if(!storage.get('ab-intro-seen')&&storage.get('ab-reduced-motion')!=='true'&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){storage.set('ab-intro-seen','1');intro.classList.add('show');introTimeout=setTimeout(finishIntro,2500);video.play().catch(finishIntro);}
+  if(storage.get('ab-reduced-motion')!=='true'&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){intro.classList.add('show');video.addEventListener('playing',()=>{introTimeout=setTimeout(finishIntro,3000);},{once:true});video.play().catch(finishIntro);}
 })();
