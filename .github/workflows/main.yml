@@ -1,22 +1,26 @@
 name: Unpack site
+
 on:
   push:
+    branches: [main]
     paths:
-      - 'ArslanBoost_Complete_2026-10-29_v2.zip'
+      - 'ArslanBoost_Complete_2026-10-29_v4.zip'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   unpack:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack archive
-        run: unzip -o ArslanBoost_Complete_2026-10-29_v2.zip -d .
-      - name: Save files
+      - name: Unpack Mini App
+        run: unzip -o ArslanBoost_Complete_2026-10-29_v4.zip -d .
+      - name: Commit extracted files
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-          git diff --cached --quiet || git commit -m "Unpack site files"
+          git diff --cached --quiet || git commit -m "Update Mini App"
           git push
