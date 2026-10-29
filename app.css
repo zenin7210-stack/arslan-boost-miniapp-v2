@@ -1,0 +1,34 @@
+/* Existing artwork, palette, and component styles stay in index.html. */
+.hero{height:auto;aspect-ratio:658/240;background-size:contain}
+.cta:disabled{cursor:not-allowed;background:#14263e;border-color:#24466c;color:#7186a7;box-shadow:none;transform:none}
+.rank-native{display:none}
+.rank-select{width:100%;padding:0;text-align:left;border:0;background:transparent;min-height:36px;font-size:15px}
+.rank-mark{display:flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:38px}
+.rank-icon{display:inline-block;flex:0 0 38px;width:38px;height:38px;background-image:url('assets/ranks.webp');background-size:326.4px 183.6px;background-repeat:no-repeat}
+.rank-options{display:grid;gap:8px}
+.rank-option{display:flex;align-items:center;gap:13px;width:100%;min-height:54px;padding:7px 12px;background:#09182a;border:1px solid #24466c;border-radius:14px;text-align:left}
+.rank-option[aria-selected="true"]{border-color:#00cfff;background:#0c2841}
+.sheet{max-height:calc(100dvh - 30px);overflow-y:auto;overscroll-behavior:contain}
+.sheet .field{margin:10px 0;min-height:52px}
+.payment-options{display:grid;gap:9px;margin:14px 0}
+.payment-method{display:flex;align-items:center;gap:12px;min-height:58px;width:100%;padding:11px 13px;border:1px solid #24466c;border-radius:14px;background:linear-gradient(110deg,#09182a,#071525);text-align:left}
+.payment-method:disabled{opacity:.45;cursor:not-allowed}
+.payment-method .sicon{flex:0 0 36px;height:36px;font-size:17px}
+.payment-method strong{display:block;font-size:14px;font-weight:600}
+.payment-method small{display:block;color:#9db1cf;font-size:11px;margin-top:4px;line-height:1.4}
+.payment-method .arrow{margin-left:auto}
+.checkout-summary{padding:13px 14px;background:#071525;border:1px solid #24466c;border-radius:14px;margin:10px 0;color:#adc0df;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.checkout-summary strong{color:#f5f8ff}
+.checkout-summary .formula{margin-top:7px;line-height:1.5}
+.sheet button.secondary{width:100%;min-height:44px;border:1px solid #285176;border-radius:13px;background:#0b1c31;margin-top:10px;padding:10px}
+.sheet button:disabled{cursor:not-allowed;opacity:.45;box-shadow:none}
+.sheet .notice{font-size:12px;color:#9db1cf}
+.sheet label{display:block;font-size:13px;color:#adc0df;margin-top:12px}
+.card-number{display:block;padding:10px 0;margin:3px 0;border:0;background:transparent;color:#00d8ff;font-weight:700;letter-spacing:1px;font-size:18px;overflow-wrap:anywhere;text-align:left}
+.sheet textarea{width:100%;min-height:155px;background:#071525;color:#adc0df;border:1px solid #24466c;border-radius:14px;padding:12px;resize:vertical;font:inherit;font-size:12px;line-height:1.5}
+.txn>div:nth-child(2){min-width:0;overflow-wrap:anywhere;font-size:12px}
+.txn strong{font-size:12px}
+.tg-head .tg-icon{cursor:pointer}
+.keyboard-open .bottom{visibility:hidden}
+@media(min-width:520px){.hero{height:auto}}
+@media(prefers-reduced-motion:reduce){.page{animation:none}}
