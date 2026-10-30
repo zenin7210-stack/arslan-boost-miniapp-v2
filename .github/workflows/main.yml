@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ArslanBoost_Complete_2026-10-29_v4.zip'
+      - 'ArslanBoost_Complete_2026-10-29_v8.zip'
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unpack Mini App
-        run: unzip -o ArslanBoost_Complete_2026-10-29_v4.zip -d .
+        run: unzip -o ArslanBoost_Complete_2026-10-29_v8.zip -d .
       - name: Commit extracted files
         run: |
           git config user.name github-actions[bot]
