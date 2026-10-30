@@ -18,7 +18,7 @@ jobs:
 
       - name: Unpack Mini App
         run: |
-          unzip -o update.zip -d .
+          unzip -o update.zip -x '.github/*' '.github/**' -d .
           rm -f update.zip
 
       - name: Save changes
